@@ -16,7 +16,12 @@ SSH importace: Important to access server recourses from outside of the newtork 
 
 Main server needs:
 
+Automated Nuclei and Nessus scans on the network
+
 automated nmap scans and checks.
+Kibana may be helpful in combining log and network changes. 
+Sounds very similar to splunk.
+https://github.com/A-poc/BlueTeam-Tools?tab=readme-ov-file#kibana
 
 Network diagram
 Prox mox more to come on thayt later
