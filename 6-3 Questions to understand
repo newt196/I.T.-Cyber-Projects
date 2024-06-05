@@ -1,0 +1,22 @@
+Red teaming
+Why are wildcards stopping gobuster requests? They seem to defeat all attempts at trying to access directories from a site
+(May need to look at feroxbuster)
+
+More information to help answer this question.
+**User-agent: * **
+
+Is used to stop all web crawlers which is quite annoying. The * wildcard is used to stop any and all includinmg private webcrreawlers.
+https://forum.hackthebox.com/t/feroxbuster-new-forced-browsing-directory-busting-tool/3325
+"has recursion and auto-filtered wildcards turned on by default, and is incredibly configurable (global, per-user, per-target)."
+Cannot confirm until I have my hands on the tool myself
+https://github.com/epi052/feroxbuster
+In some research feros handles wildcard sbetter with recusriuon and a way to better force websites to give up the goods.
+
+Why are their two ips listed in a discorvery scan on some bug bounty websites.
+(edge routers? load balancers?)
+Edge routers it seemsm if cloud the site can be active active throuygh different ips for the site.
+Able to confirm with a or AAAA dns lookup. We can try to dfind the main dns which could helpeful.
+
+
+How does port forwading work on a networking and fundemtnal level. Other than just forward port lulw
+
