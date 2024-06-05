@@ -14,6 +14,9 @@ The password is coprrect, but from what I can guess is the pki not being configu
 SSH needs: PKI infra | Port forwading
 SSH importace: Important to access server recourses from outside of the newtork securely. Just need to truple check that the access is secured and checked and peer reviewed. 
 
+
+
+
 Main server needs:
 
 Automated Nuclei and Nessus scans on the network
