@@ -1,4 +1,4 @@
-IT Analyst job requirements
+IT Operatrions Analyst job info
 
 - Creation of 10 percent of Enterpirse Splunk dashboards including vpn user log check, niche wifi key validating process, Sharepoint health checker, 
 - Lead and managed buidling power downs and ups ensuring that all servers and computers are brought down and up.
@@ -9,3 +9,5 @@ IT Analyst job requirements
 - Creating and running 5 percent of major Incidents including meeting setup, documentation, and *** upon starting at ICE
 - Utilized Powershell and a bit of Python to autoimate and verify provisioning daily and monthly tickets.(Code in github)
 - Creating 50 percent of runbooks and SOP with new work and process flows. 
+- Configuring new alerts and processes for managed servers and computers (new application monitering and data points for traggering alerts)
+- Coordinating with appropriate teams ie, NEtops, Systems Engineering or Cyber for appropriate esculation. 
