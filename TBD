@@ -1,0 +1,5 @@
+Setup and monitored an Endlessh a honeypot/tarpit 
+Two SSH servers setup fopr ligitimate use on port 3333, while Endlessh was opened on the stanbdard ssh port.
+Attackers and Bots once met with port 22 login, are caught in 
+Illegitmtte login attempts are logged and blocked for later, while all other legigitmate logins are logged elsewhere.
+Mostly was able to monitor bots and basic script kiddies, hardening my SSH enviroment. 
