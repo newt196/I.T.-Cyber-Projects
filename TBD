@@ -8,4 +8,23 @@ Mostly was able to monitor bots and basic script kiddies, hardening my SSH envir
 Configured two SSH servers for legitimate access on port 3333, while deploying Endlessh as a honeypot on the standard SSH port (22) to trap attackers.
 Captured and analyzed unauthorized login attempts on port 22, logging and blocking illegitimate access attempts for further review.
 Implemented a dual logging system to separate legitimate login activity from malicious attempts, enhancing overall security and monitoring capabilities.
-Successfully monitored and identified bot and script kiddie activity, significantly hardening the SSH environment against common attacks.
+Successfully monitored and identified bot and script kiddie activity, significantly hardening the SSH environment against common and script based attacks.
+
+Setup monitoring on all interent facing servers and computers.
+Installed Wazuh on a dedicated VM on my Windows server to get familiar with monitring and detection. 
+Setup user agents in my Unix enviroment, Windows server enviroment personal computer and laptop.
+
+
+Deployed and configured Wazuh for real-time security monitoring across multiple endpoints, enhancing threat detection and incident response capabilities.
+
+Integrated Wazuh with Elasticsearch and Kibana to create custom dashboards for visualizing security events, resulting in improved situational awareness and actionable insights.
+
+Developed and fine-tuned detection rules within Wazuh to minimize false positives and accurately identify threats such as unauthorized access, malware, and file integrity violations.
+
+Implemented an automated incident response framework using Wazuh, reducing response times and effectively containing potential security breaches.
+
+Conducted comprehensive log analysis and forensic investigations using Wazuh, leading to the identification and mitigation of network vulnerabilities and attack vectors.
+
+
+
+
