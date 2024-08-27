@@ -3,3 +3,9 @@ Two SSH servers setup fopr ligitimate use on port 3333, while Endlessh was opene
 Attackers and Bots once met with port 22 login, are caught in 
 Illegitmtte login attempts are logged and blocked for later, while all other legigitmate logins are logged elsewhere.
 Mostly was able to monitor bots and basic script kiddies, hardening my SSH enviroment. 
+
+
+Configured two SSH servers for legitimate access on port 3333, while deploying Endlessh as a honeypot on the standard SSH port (22) to trap attackers.
+Captured and analyzed unauthorized login attempts on port 22, logging and blocking illegitimate access attempts for further review.
+Implemented a dual logging system to separate legitimate login activity from malicious attempts, enhancing overall security and monitoring capabilities.
+Successfully monitored and identified bot and script kiddie activity, significantly hardening the SSH environment against common attacks.
