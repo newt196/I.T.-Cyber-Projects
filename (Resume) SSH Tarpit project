@@ -1,0 +1,4 @@
+Background: Implmented a layered approach to my ubuntu serevr. More specifically on port 22. 
+
+Honeytrap/Tarpit port = 22
+Moved SSH port = 4224
