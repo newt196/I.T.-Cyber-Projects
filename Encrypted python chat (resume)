@@ -4,40 +4,30 @@ Need to filter code here and explenmation and objectives.
 import socket
 import threading
 
-# Socket: Helps control the networking portion of the chat client. 
-# Threading: Helps manage muptiple users connecting to the server. (will need different clients to test in verbose mode)
-
-# can we further configure the host ip and not use the loopback address. 
-
 host = '127.0.0.1' 
 port = 1234
 
-# port does not have to be explained
-# interesting to note that we need to run nmap to see if the port is for viewing. 
-# I dont see why it wouldnt because if the clients can connect to the ip and port, nmap should be able to. 
 
 # AF_INET address family - Internet, further explaines that the ip in use is ipv4.
-# SOCK_STREAM Specifies that TCP is in use for the communication port.
+# SOCK_STREAM Specifies that TCP is in use for the communication port. May need to switch to udp if we care about just spitting out messageing without Syn ACK. 
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind((host, port))
 server.listen()
 
 # Bind associates the socket with a specific host and port provided in the above.
-
 # further defining who and what connects to the server. 
 
 clients = []
 names = []
 
-# not entirely needed but helps provide feedback to who connects to the server.
+# helps provide feedback to who connects to the server.
 
 def broadcast(message):
   for client in clients:
      client.send(message)
 
 # logic to handle users connecting to the server. defining client handle function to run endlessly
-# 
 def handle(client):
   while True:
     try:
