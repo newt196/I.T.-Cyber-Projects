@@ -7,12 +7,12 @@ Windows computer is using lan | Kali linux is using WLAN that support monitor mo
 Main Windows Server  
 Hosts | Ubuntu 22 - Hypervisor 2  | Windows Server 2022 | 
 Open on SSH...for now. Verified with nmap 
-SSH is configuired to open manually
+SSH is configured to open manually
 Security is lackluster at default. Will not work on the same micosoft account(https://answers.microsoft.com/en-us/windows/forum/all/ssh-into-microsoft-linked-windows-account/67cb53aa-22c3-4dc8-914a-1030efa1fd81)
 Wild, but will work...work to well on a computer that is setup outside of the account. Working as in will grant access upon three tries of the password being "wrong"
-The password is coprrect, but from what I can guess is the pki not being configured and not routing the correct password to the host properly.
-SSH needs: PKI infra | Port forwading
-SSH importace: Important to access server recourses from outside of the newtork securely. Just need to truple check that the access is secured and checked and peer reviewed. 
+The password is correct, but from what I can guess is the pki not being configured and not routing the correct password to the host properly.
+SSH needs: PKI infra | Port forwarding
+SSH importance: Important to access server recourses from outside of the network securely. Just need to triple check that the access is secured and checked and peer reviewed. 
 
 
 
@@ -27,27 +27,25 @@ Sounds very similar to splunk.
 https://github.com/A-poc/BlueTeam-Tools?tab=readme-ov-file#kibana
 
 Network diagram
-Prox mox more to come on thayt later
+Prox mox more to come on that later
 
 IDS solution (snort most likely)
-A way to montior and send logs securely
+A way to monitor and send logs securely
 
-Segementation for Windows server/computer | WIndows and Ubuntu laptops
+Segmentation for Windows server/computer | Windows and Ubuntu laptops
 No reason other than learning
 Right now on a default 192/24 config
 
 
-SNMP module for montiring ther server remotely.
+SNMP module for monitoring the server remotely.
 
-SSH tarpit to slow or montiro brute force attempts
+SSH tarpit to slow or monitor brute force attempts
 
 HTTP & HTTPS host for misc request
 Python code, exploits, and basic sites
 More to come on that
 
-Email domain? Unsure how the hosting works onm a network level and outside of Dovecot.
+Email domain? Unsure how the hosting works on a network level and outside of Dovecot.
 
 
-CLoud solutions in the future...but we will see. 
-
-
+Cloud solutions in the future...but we will see.
