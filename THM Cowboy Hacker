@@ -1,4 +1,13 @@
 https://tryhackme.com/room/cowboyhacker
+Notes + Key Takeaway
+
+# Anonymous use and access on the ftp port
+# Attacking username.txt with Hyrda and escalation there after
+# Privilege escalation through exploiting sudo and tar privelages 
+
+
+
+
 
 Need to restart the machine, was hanging up its ftp server.
 
@@ -104,11 +113,11 @@ ftp> less task.txt
 1.) Protect Vicious.
 2.) Plan for Red Eye pickup on the moon.
 Task doesn’t seem helpful, but I grabbed both of the files with mget.
-May be able to use the locks against a known usdername. ALtghough as of now, not really sure what the username is?
-By accident, dound the username or the answer to the question in the task list.
+May be able to use the locks against a known username. Although as of now, not really sure what the username is?
+By accident, found the username or the answer to the question in the task list.
 At the end there is a “-lin”
 
-I already see the answer for What service can you bruteforce with the text file found?
+I already see the answer for What service can you brute force with the text file found?
 
 SSH
 
