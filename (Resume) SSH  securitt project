@@ -1,9 +1,9 @@
-Background: Implemented a layered approach to my ubuntu server hosting my SSH server. More specifically on port 22. 
+Background: Implemented security through obscurity to my ubuntu server.
 
 Local network  = 192.168.1.97
 
 Honeytrap/Tarpit port = 22
-Moved SSH port = 7069
+Moved SSH port = ****
 
 Most attempts on port 22 or the server was bot activity. (Almost all activity)
 
@@ -23,6 +23,17 @@ Project is based on
 https://github.com/skeeto/endlessh
 https://github.com/fail2ban/fail2ban
 
-Endlessh notes:
+Endlessh install and setup notes. 
+Setup and confirmed to be running by checking services and running nmap on a seperate machine. 
+
+nmap results are as follows:
+
+SSH/port 22 looks like a legitimnate port while port **** shows no to little information aboit it. 
+
+
+SSH general notes
+In order to obscure the Ubuntu server. I impolmented netcat listers and other random lsiterners and services to obscure legitimate services.
+
+Nmap results are as provided:
 
 
