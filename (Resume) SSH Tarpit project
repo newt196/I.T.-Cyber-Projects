@@ -1,9 +1,9 @@
 Background: Implemented a layered approach to my ubuntu server hosting my SSH server. More specifically on port 22. 
 
-port forwarded ip/public ip  = 192.168.54.***
+Local network  = 192.168.1.97
 
 Honeytrap/Tarpit port = 22
-Moved SSH port = 4224
+Moved SSH port = 7069
 
 Most attempts on port 22 or the server was bot activity. (Almost all activity)
 
@@ -22,4 +22,7 @@ The attacker figure now trying port 4224, without successful login.
 Project is based on 
 https://github.com/skeeto/endlessh
 https://github.com/fail2ban/fail2ban
+
+Endlessh notes:
+
 
