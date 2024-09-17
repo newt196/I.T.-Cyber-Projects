@@ -14,7 +14,7 @@ Interesting to note that being open for a month or so, most system that hit the 
 Typically the system giving up after being met with the initial tarpit. Once the system re tries the server login.
 
 Interesting to note that of the few systems that would try to login:
-Some would try to login after over some time  until being banned
+Some would try to login after over some time until being banned
 
 One instance where logins were tried port 22 from one ip, getting banned. More intensive system scan coming in from a different but similar ip. 
 The attacker figure now trying port 4224, without successful login. 
@@ -24,16 +24,14 @@ https://github.com/skeeto/endlessh
 https://github.com/fail2ban/fail2ban
 
 Endlessh install and setup notes. 
-Setup and confirmed to be running by checking services and running nmap on a seperate machine. 
+Setup and confirmed to be running by checking services and running nmap on a separate machine. 
 
 nmap results are as follows:
 
-SSH/port 22 looks like a legitimnate port while port **** shows no to little information aboit it. 
+SSH/port 22 looks like a legitimate port while port **** shows no to little information about it. 
 
 
 SSH general notes
-In order to obscure the Ubuntu server. I impolmented netcat listers and other random lsiterners and services to obscure legitimate services.
+In order to obscure the Ubuntu server. I implemented netcat listers and other random listeners and services to obscure legitimate services.
 
 Nmap results are as provided:
-
-
