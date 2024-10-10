@@ -1,37 +1,67 @@
-Background: Implemented security through obscurity to my ubuntu server.
+# Security Through Obscurity on Ubuntu Server
 
-Local network  = 192.168.1.97
+## Background
 
-Honeytrap/Tarpit port = 22
-Moved SSH port = ****
+This project implements security through obscurity on my Ubuntu server to mitigate unauthorized access and potential attacks. 
 
-Most attempts on port 22 or the server was bot activity. (Almost all activity)
+### Network Configuration
+- **Local Network:** `192.168.1.97`
+- **Honeytrap/Tarpit Port:** `22`
+- **Moved SSH Port:** `****` (specific port number omitted for security reasons)
 
-Most users or bots trying to bruteforce the login was met with a 
-Implemented fail2ban to automatically clear out any bots or systems that was still trying to login and re trying the login attempt. 
-Most attempts would time out and be banned after 5-10 minutes. 
-Interesting to note that being open for a month or so, most system that hit the server were automated attacks. 
-Typically the system giving up after being met with the initial tarpit. Once the system re tries the server login.
+## Observations
 
-Interesting to note that of the few systems that would try to login:
-Some would try to login after over some time until being banned
+During the initial monitoring period, several interesting findings emerged:
 
-One instance where logins were tried port 22 from one ip, getting banned. More intensive system scan coming in from a different but similar ip. 
-The attacker figure now trying port 4224, without successful login. 
+- **Traffic Analysis:** 
+  - Most attempts on port 22 (the default SSH port) were attributed to bot activity. 
+  - Nearly all login attempts appeared to be automated, with significant brute-force attempts targeting the login credentials.
 
-Project is based on 
-https://github.com/skeeto/endlessh
-https://github.com/fail2ban/fail2ban
+- **Intrusion Prevention:**
+  - Implemented **Fail2Ban** to automatically block bots or systems that repeatedly attempted to log in.
+  - Most of these attempts would timeout and result in a ban after 5-10 minutes of persistent failed logins.
+  
+- **Attack Patterns:**
+  - After being exposed for about a month, it was noted that the majority of systems attempting to access the server were automated attacks. 
+  - Most systems ceased attempts after encountering the initial tarpit, and subsequent retries were met with the implemented security measures.
+  - Interestingly, some IP addresses persisted, trying to login intermittently until being banned.
 
-Endlessh install and setup notes. 
-Setup and confirmed to be running by checking services and running nmap on a separate machine. 
+- **Notable Incident:**
+  - An instance was recorded where login attempts were made on port 22 from one IP address, resulting in a ban. Subsequently, a more intensive scan was initiated from a different but similar IP address, attempting access on port `4224`, which also did not succeed.
 
-nmap results are as follows:
+## Project Dependencies
 
-SSH/port 22 looks like a legitimate port while port **** shows no to little information about it. 
+This project is based on the following repositories:
+- [Endlessh](https://github.com/skeeto/endlessh)
+- [Fail2Ban](https://github.com/fail2ban/fail2ban)
 
+### Installation and Setup Notes for Endlessh
 
-SSH general notes
-In order to obscure the Ubuntu server. I implemented netcat listers and other random listeners and services to obscure legitimate services.
+1. **Installation:** Follow the installation instructions outlined in the Endlessh repository.
+2. **Verification:** Confirm that Endlessh is running by checking the service status and using `nmap` from a separate machine.
 
-Nmap results are as provided:
+### Nmap Results
+
+When scanning the server, the results were as follows:
+
+- **Port 22 (SSH):** Appeared to be a legitimate service.
+- **Moved SSH Port (****):** Showed minimal information, reinforcing the obscurity strategy.
+
+## Additional Security Measures
+
+To further obscure the Ubuntu server, additional measures were implemented, including:
+- Using **Netcat** listeners and random services to mask legitimate services.
+  
+### Conclusion
+
+This security setup effectively deterred automated attacks while providing a robust environment for the Ubuntu server. Continuous monitoring and adjustments to the security protocols will help maintain system integrity.
+
+## Future Considerations
+
+- Further refine fail2ban rules for enhanced security.
+- Implement additional logging and monitoring to analyze attack patterns over time.
+- Consider deploying additional honeypots for deeper insights into attack methodologies.
+
+---
+
+*For further inquiries or to contribute to this project, please contact me at [your email address].*
